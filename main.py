@@ -1,24 +1,38 @@
+from fastapi.responses import HTMLResponse
 from fastapi import FastAPI
-from flask import Flask
-app_fastapi = FastAPI()
-app = Flask(__name__)
 
-@app.route('/', methods=["GET"])
+
+app = FastAPI()
+
+
+@app.get("/", response_class=HTMLResponse)
 def hello_world():
-    return """Welcome to the rancharound website...
+    return """
+    <html>
+        <head>
+            <title>RanchAround</title>
+        </head>
+        <body>
+            <h1>Welcome to the rancharound website...</h1>
+            <p>Under development, </p>
+            <p>thanks for visiting,</p>
+            <p>come back later.</p>
+        </body>
+    </html>
+    """
 
-    Under development, 
-    
-    thanks for visiting, 
-    
-    come back later."""
-
-@app_fastapi.get("/api")
+@app.get("/api", response_class=HTMLResponse)
 async def api_root():
-    return """Welcome to rancharound' api...
-
-    Under development, 
-    
-    thanks for visiting, 
-    
-    come back later."""
+    return """    
+    <html>
+        <head>
+            <title>RanchAround API</title>
+        </head>
+        <body>
+            <h1>Welcome to the rancharound api...</h1>
+            <p>Under development, </p>
+            <p>thanks for visiting,</p>
+            <p>come back later.</p>
+        </body>
+    </html>
+    """
