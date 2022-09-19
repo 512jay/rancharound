@@ -17,6 +17,8 @@ def hello_world():
             <p>Under development, </p>
             <p>thanks for visiting,</p>
             <p>come back later.</p>
+            <h3>Current project is: <a href="https://trailing-sl.herokuapp.com/>
+                Trailing Stoploss Indian Stock Strategy</a></h3>
         </body>
     </html>
     """
